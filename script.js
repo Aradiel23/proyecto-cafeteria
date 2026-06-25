@@ -15,14 +15,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     botonMenu.addEventListener("click", () => {
         const abierto = navLista.classList.toggle("abierto");
-        botonMenu.setAttribute("aria-expanded", abierto);
+        botonMenu.setAttribute("aria-expanded", abierto ? "Cerrar menú" : "Abrir menú");
     });
 
     // Cerrar el menú al hacer clic en un enlace
     navLista.querySelectorAll("a").forEach(enlace => {
         enlace.addEventListener("click", () => {
             navLista.classList.remove("abierto");
-            botonMenu.setAttribute("aria-expanded", false);
+            botonMenu.setAttribute("aria-label", "Abrir menú");
         });
     });
 
