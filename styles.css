@@ -1,0 +1,430 @@
+/* ============================================================
+   Café Aurora — Hoja de estilos (styles.css)
+   Paleta: off-white cálido, café espresso, miel y verde bosque
+   ============================================================ */
+
+/* ---------- Variables de color y tipografía ---------- */
+:root {
+    --fondo:    #faf6f0;   /* fondo general, blanco hueso cálido */
+    --tinta:    #241a13;   /* texto principal, casi negro espresso */
+    --cafe:     #6f4e2e;   /* marrón café medio */
+    --miel:     #d99a2b;   /* acento principal: miel/caramelo */
+    --bosque:   #2f5d50;   /* acento secundario: verde bosque */
+    --suave:    #efe6d8;   /* fondo de tarjetas */
+    --linea:    #e0d4c2;   /* bordes suaves */
+    --blanco:   #ffffff;
+
+    --fuente-titulo: "Fraunces", Georgia, serif;
+    --fuente-texto:  "DM Sans", system-ui, sans-serif;
+
+    --radio: 16px;
+    --ancho-max: 1140px;
+}
+
+/* ---------- Reset básico ---------- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: var(--fuente-texto);
+    background-color: var(--fondo);
+    color: var(--tinta);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+
+/* ---------- Utilidades de texto ---------- */
+.eyebrow,
+.hero__eyebrow {
+    font-size: 0.8rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--miel);
+}
+
+.titulo-seccion {
+    font-family: var(--fuente-titulo);
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 600;
+    line-height: 1.1;
+    margin: 0.4rem 0 0.6rem;
+}
+
+.subtitulo { color: var(--cafe); }
+
+/* ---------- Botones ---------- */
+.boton {
+    display: inline-block;
+    padding: 0.85rem 1.6rem;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: transform 0.15s ease, background-color 0.2s ease, color 0.2s ease;
+}
+.boton:hover { transform: translateY(-2px); }
+
+.boton--principal {
+    background-color: var(--tinta);
+    color: var(--fondo);
+}
+.boton--principal:hover { background-color: var(--bosque); }
+
+.boton--borde {
+    background-color: transparent;
+    color: var(--tinta);
+    border-color: var(--tinta);
+}
+.boton--borde:hover { background-color: var(--tinta); color: var(--fondo); }
+
+/* ============================================================
+   HEADER / ENCABEZADO
+   ============================================================ */
+.encabezado {
+    background:
+        radial-gradient(circle at 80% -10%, rgba(217, 154, 43, 0.18), transparent 45%),
+        var(--fondo);
+}
+
+/* --- Barra de navegación --- */
+.navegacion {
+    max-width: var(--ancho-max);
+    margin: 0 auto;
+    padding: 1.2rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--fuente-titulo);
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+.logo__icono { font-size: 1.5rem; }
+.logo__texto em { color: var(--miel); font-style: italic; }
+
+.nav__lista {
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+    font-weight: 500;
+}
+.nav__lista a { position: relative; padding: 0.2rem 0; }
+.nav__lista a:not(.nav__cta):hover { color: var(--miel); }
+
+.nav__cta {
+    background-color: var(--miel);
+    color: var(--tinta);
+    padding: 0.6rem 1.2rem;
+    border-radius: 999px;
+    font-weight: 700;
+}
+.nav__cta:hover { background-color: var(--cafe); color: var(--fondo); }
+
+/* Botón hamburguesa (oculto en escritorio) */
+.nav__boton {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+}
+.nav__boton span {
+    width: 26px;
+    height: 3px;
+    background-color: var(--tinta);
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+/* --- Hero / bienvenida --- */
+.hero {
+    max-width: var(--ancho-max);
+    margin: 0 auto;
+    padding: 3rem 1.5rem 5rem;
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+.hero__titulo {
+    font-family: var(--fuente-titulo);
+    font-size: clamp(2.4rem, 6vw, 4.2rem);
+    font-weight: 600;
+    line-height: 1.02;
+    margin: 0.6rem 0 1rem;
+}
+.hero__texto {
+    max-width: 42ch;
+    color: var(--cafe);
+    font-size: 1.1rem;
+    margin-bottom: 1.8rem;
+}
+.hero__acciones { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+/* Sello circular "recién tostado" */
+.hero__sello {
+    justify-self: center;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-color: var(--bosque);
+    color: var(--fondo);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: var(--fuente-titulo);
+    box-shadow: 0 18px 40px rgba(47, 93, 80, 0.3);
+    transform: rotate(-8deg);
+}
+.hero__sello strong { font-size: 1.6rem; font-style: italic; }
+.hero__sello span { font-size: 0.9rem; opacity: 0.85; }
+
+/* ============================================================
+   BODY / CUERPO
+   ============================================================ */
+.seccion {
+    max-width: var(--ancho-max);
+    margin: 0 auto;
+    padding: 4.5rem 1.5rem;
+}
+.seccion__cabecera { text-align: center; max-width: 50ch; margin: 0 auto 2.5rem; }
+
+/* --- Menú de productos --- */
+.menu__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.4rem;
+}
+.menu__cargando { grid-column: 1 / -1; text-align: center; color: var(--cafe); }
+
+.tarjeta {
+    background-color: var(--blanco);
+    border: 1px solid var(--linea);
+    border-radius: var(--radio);
+    padding: 1.5rem;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.tarjeta:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px rgba(36, 26, 19, 0.1);
+}
+.tarjeta__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.5rem;
+}
+.tarjeta__nombre {
+    font-family: var(--fuente-titulo);
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+.tarjeta__precio {
+    font-weight: 700;
+    color: var(--bosque);
+    white-space: nowrap;
+}
+.tarjeta__desc { color: var(--cafe); font-size: 0.95rem; margin-top: 0.5rem; }
+.tarjeta__etiqueta {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--miel);
+    background-color: var(--suave);
+    padding: 0.25rem 0.7rem;
+    border-radius: 999px;
+}
+
+/* --- Sección Nosotros --- */
+.nosotros {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+.nosotros__texto p { margin-bottom: 1rem; color: var(--cafe); }
+.nosotros__texto .titulo-seccion { color: var(--tinta); }
+
+.nosotros__datos {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+.nosotros__datos li { display: flex; flex-direction: column; }
+.nosotros__datos strong {
+    font-family: var(--fuente-titulo);
+    font-size: 2rem;
+    color: var(--bosque);
+}
+.nosotros__datos span { font-size: 0.85rem; color: var(--cafe); }
+
+.nosotros__tarjeta {
+    background-color: var(--bosque);
+    color: var(--fondo);
+    border-radius: var(--radio);
+    padding: 3rem 2rem;
+    text-align: center;
+}
+.nosotros__emoji { font-size: 4rem; display: block; margin-bottom: 1rem; }
+.nosotros__tarjeta p {
+    font-family: var(--fuente-titulo);
+    font-style: italic;
+    font-size: 1.4rem;
+}
+
+/* ============================================================
+   FOOTER / PIE DE PÁGINA
+   ============================================================ */
+.pie {
+    background-color: var(--tinta);
+    color: var(--fondo);
+    padding: 3.5rem 1.5rem 1.5rem;
+}
+.pie__grid {
+    max-width: var(--ancho-max);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) 1.4fr;
+    gap: 2.5rem;
+}
+.pie__col--ancha { grid-column: 1 / -1; }
+
+.logo--claro .logo__texto em { color: var(--miel); }
+
+.pie__lema { color: #c9bcae; margin-top: 0.8rem; max-width: 30ch; }
+
+.pie__titulo {
+    font-family: var(--fuente-titulo);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: var(--miel);
+}
+.pie__lista li { color: #d8ccbd; margin-bottom: 0.6rem; font-size: 0.95rem; }
+
+/* Redes sociales */
+.redes { display: flex; flex-direction: column; gap: 0.6rem; }
+.redes__enlace {
+    color: #d8ccbd;
+    font-weight: 500;
+    width: fit-content;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+.redes__enlace:hover { color: var(--miel); transform: translateX(4px); }
+
+/* Formulario de contacto */
+.formulario {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    max-width: 620px;
+}
+.campo { display: flex; flex-direction: column; gap: 0.35rem; }
+.campo:nth-child(3) { grid-column: 1 / -1; }   /* mensaje ocupa todo el ancho */
+.formulario .boton {
+    grid-column: 1 / -1;
+    justify-self: start;
+    background-color: var(--miel);
+    color: var(--tinta);
+}
+.formulario .boton:hover { background-color: var(--blanco); }
+
+.campo label { font-size: 0.85rem; color: #c9bcae; font-weight: 500; }
+.campo input,
+.campo textarea {
+    background-color: #33271d;
+    border: 1px solid #4a3a2c;
+    border-radius: 10px;
+    padding: 0.7rem 0.9rem;
+    color: var(--fondo);
+    font-family: inherit;
+    font-size: 0.95rem;
+    resize: vertical;
+}
+.campo input:focus,
+.campo textarea:focus {
+    outline: 2px solid var(--miel);
+    outline-offset: 1px;
+    border-color: transparent;
+}
+.campo input::placeholder,
+.campo textarea::placeholder { color: #8a7a6a; }
+
+.formulario__aviso {
+    grid-column: 1 / -1;
+    font-size: 0.9rem;
+    min-height: 1.2em;
+}
+.formulario__aviso.ok  { color: #7fd6a0; }
+.formulario__aviso.err { color: #f0a58e; }
+
+.pie__base {
+    max-width: var(--ancho-max);
+    margin: 2.5rem auto 0;
+    padding-top: 1.5rem;
+    border-top: 1px solid #3a2c20;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #9c8c7c;
+}
+
+/* ============================================================
+   RESPONSIVO (celulares y tablets)
+   ============================================================ */
+@media (max-width: 860px) {
+    .hero,
+    .nosotros { grid-template-columns: 1fr; }
+    .hero__sello { display: none; }
+    .pie__grid { grid-template-columns: 1fr 1fr; }
+    .formulario { grid-template-columns: 1fr; }
+    .campo:nth-child(3) { grid-column: auto; }
+}
+
+@media (max-width: 620px) {
+    /* Menú de navegación en celular */
+    .nav__boton { display: flex; }
+    .nav__lista {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background-color: var(--fondo);
+        padding: 1rem 1.5rem;
+        gap: 1rem;
+        border-top: 1px solid var(--linea);
+        box-shadow: 0 12px 24px rgba(36, 26, 19, 0.12);
+        display: none;
+        z-index: 10;
+    }
+    .nav__lista.abierto { display: flex; }
+    .nav__cta { text-align: center; }
+
+    .pie__grid { grid-template-columns: 1fr; }
+    .hero__acciones .boton { flex: 1; text-align: center; }
+}
+
+/* Respeta a quien prefiere menos animaciones */
+@media (prefers-reduced-motion: reduce) {
+    * { scroll-behavior: auto; transition: none !important; }
+}

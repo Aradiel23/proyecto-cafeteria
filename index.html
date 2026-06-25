@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café Aurora — Tostado de especialidad</title>
+    <meta name="description" content="Café Aurora: cafetería de especialidad. Granos tostados a diario, repostería casera y un buen lugar para quedarse.">
+
+    <!-- Tipografías de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Hoja de estilos -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ===================================================== -->
+    <!-- HEADER / ENCABEZADO                                   -->
+    <!-- Menú de navegación + logo/título                       -->
+    <!-- ===================================================== -->
+    <header class="encabezado" id="inicio">
+        <nav class="navegacion" aria-label="Navegación principal">
+            <!-- Logo / Título -->
+            <a href="#inicio" class="logo">
+                <span class="logo__icono" aria-hidden="true">☕</span>
+                <span class="logo__texto">Café <em>Aurora</em></span>
+            </a>
+
+            <!-- Botón para abrir el menú en celulares -->
+            <button class="nav__boton" id="botonMenu" aria-label="Abrir menú" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+
+            <!-- Enlaces del menú de navegación -->
+            <ul class="nav__lista" id="navLista">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#menu">Menú</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#contacto" class="nav__cta">Reservar</a></li>
+            </ul>
+        </nav>
+
+        <!-- Sección de bienvenida (hero) -->
+        <div class="hero">
+            <div class="hero__contenido">
+                <p class="hero__eyebrow">Tostado de especialidad · desde 2020</p>
+                <h1 class="hero__titulo">El día empieza<br>con un buen café.</h1>
+                <p class="hero__texto">
+                    Granos seleccionados y tostados a diario, repostería hecha en casa
+                    y una mesa junto a la ventana esperándote.
+                </p>
+                <div class="hero__acciones">
+                    <a href="#menu" class="boton boton--principal">Ver el menú</a>
+                    <a href="#contacto" class="boton boton--borde">Cómo llegar</a>
+                </div>
+            </div>
+            <div class="hero__sello" aria-hidden="true">
+                <span>Recién</span>
+                <strong>tostado</strong>
+                <span>hoy</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===================================================== -->
+    <!-- BODY / CUERPO                                         -->
+    <!-- Contenido principal + sección de productos/menú        -->
+    <!-- ===================================================== -->
+    <main>
+
+        <!-- Sección de productos: se llena con datos de Python (Flask) -->
+        <section class="seccion menu" id="menu">
+            <div class="seccion__cabecera">
+                <p class="eyebrow">Nuestra carta</p>
+                <h2 class="titulo-seccion">Lo que servimos</h2>
+                <p class="subtitulo">Precios en bolivianos (Bs). La carta cambia con la temporada.</p>
+            </div>
+
+            <!-- Aquí JavaScript inserta las tarjetas del menú -->
+            <div class="menu__grid" id="menuGrid">
+                <p class="menu__cargando" id="menuCargando">Cargando el menú…</p>
+            </div>
+        </section>
+
+        <!-- Sección informativa "Nosotros" -->
+        <section class="seccion nosotros" id="nosotros">
+            <div class="nosotros__texto">
+                <p class="eyebrow">Nosotros</p>
+                <h2 class="titulo-seccion">Un café pequeño, hecho con calma</h2>
+                <p>
+                    Café Aurora nació como un proyecto familiar. Compramos el grano
+                    directamente a productores de los Yungas y lo tostamos en lotes
+                    pequeños para que cada taza tenga su mejor momento.
+                </p>
+                <p>
+                    Más que vender café, queremos un lugar donde la gente del barrio
+                    se sienta en casa: para trabajar, leer o conversar sin prisa.
+                </p>
+                <ul class="nosotros__datos">
+                    <li><strong>+5</strong><span>años abiertos</span></li>
+                    <li><strong>100%</strong><span>grano nacional</span></li>
+                    <li><strong>7am</strong><span>abrimos cada día</span></li>
+                </ul>
+            </div>
+            <div class="nosotros__tarjeta" aria-hidden="true">
+                <span class="nosotros__emoji">🫖</span>
+                <p>"El café no se apura."</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===================================================== -->
+    <!-- FOOTER / PIE                                           -->
+    <!-- Información de contacto + redes sociales               -->
+    <!-- ===================================================== -->
+    <footer class="pie" id="contacto">
+        <div class="pie__grid">
+
+            <!-- Columna 1: marca -->
+            <div class="pie__col">
+                <a href="#inicio" class="logo logo--claro">
+                    <span class="logo__icono" aria-hidden="true">☕</span>
+                    <span class="logo__texto">Café <em>Aurora</em></span>
+                </a>
+                <p class="pie__lema">Tostado de especialidad, hecho con calma.</p>
+            </div>
+
+            <!-- Columna 2: contacto -->
+            <div class="pie__col">
+                <h3 class="pie__titulo">Contacto</h3>
+                <ul class="pie__lista">
+                    <li>📍 C. Paquio entre Av. Los Almendros y Av. Los Cocos, Guayaramerín</li>
+                    <li>📞 +591 69568848</li>
+                    <li>✉️ hola@cafeaurora.bo</li>
+                    <li>🕒 Lun a Dom · 7:00 – 21:00</li>
+                </ul>
+            </div>
+
+            <!-- Columna 3: redes sociales -->
+            <div class="pie__col">
+                <h3 class="pie__titulo">Síguenos</h3>
+                <div class="redes">
+                    <a href="#" class="redes__enlace" aria-label="Facebook">Facebook</a>
+                    <a href="#" class="redes__enlace" aria-label="Instagram">Instagram</a>
+                    <a href="#" class="redes__enlace" aria-label="WhatsApp">WhatsApp</a>
+                    <a href="#" class="redes__enlace" aria-label="TikTok">TikTok</a>
+                </div>
+            </div>
+
+            <!-- Columna 4: formulario de contacto (envía datos a Python) -->
+            <div class="pie__col pie__col--ancha">
+                <h3 class="pie__titulo">Escríbenos</h3>
+                <form class="formulario" id="formContacto" novalidate>
+                    <div class="campo">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                    </div>
+                    <div class="campo">
+                        <label for="email">Correo</label>
+                        <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required>
+                    </div>
+                    <div class="campo">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="3" placeholder="¿En qué te ayudamos?" required></textarea>
+                    </div>
+                    <button type="submit" class="boton boton--principal">Enviar mensaje</button>
+                    <!-- Aquí JavaScript muestra el resultado del envío -->
+                    <p class="formulario__aviso" id="formAviso" role="status"></p>
+                </form>
+            </div>
+        </div>
+
+        <div class="pie__base">
+            <p>© <span id="anio"></span> Café Aurora. Proyecto académico — Actividad #2.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript del navegador -->
+    <script src="script.js"></script>
+</body>
+</html>
